@@ -34,10 +34,8 @@ class Solution {
             for(TreeNode node : currentLevel){
                 if(node!=null){
                     levelVals.add(node.val);
-                    // if(node.left!=null)
-                        nextLevel.add(node.left);
-                    // if(node.right!=null)
-                        nextLevel.add(node.right);
+                    nextLevel.add(node.left);
+                    nextLevel.add(node.right);
                 }
             }
                             
