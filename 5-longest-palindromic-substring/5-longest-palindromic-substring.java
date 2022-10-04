@@ -16,7 +16,8 @@ class Solution {
         return s.substring(start, end+1);
     }
     
-    int expandFromCenter(String s, int L, int R){
+    int expandFromCenter(String s, int left, int right){
+        int L = left; int R = right;
         while(L>=0 && R<s.length() &&
                     s.charAt(L)==s.charAt(R)){
             L--;
