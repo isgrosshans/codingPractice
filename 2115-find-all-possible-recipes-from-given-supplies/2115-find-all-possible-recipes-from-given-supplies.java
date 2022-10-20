@@ -27,10 +27,6 @@ class Solution {
     }
     
     private boolean isPossible(String recipe) {
-        if(supplies.containsAll(recipes.get(recipe))){
-            supplies.add(recipe);
-            return true;
-        }
         
         Stack<String> stack = new Stack<>();
         
@@ -40,9 +36,13 @@ class Solution {
             String curr = stack.pop();
             
             for (String ing : recipes.get(curr)){
+                
                 if(stack.contains(ing)) return false;
-                if(recipes.containsKey(ing)) stack.push(ing);
+                
+                else if(recipes.containsKey(ing)) stack.push(ing);
+                    
                 else if(!supplies.contains(ing)) return false;
+
             }
         }
         
